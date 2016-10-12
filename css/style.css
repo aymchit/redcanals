@@ -105,8 +105,8 @@ ul{list-style-type:none;}
 
 .homeBody{ position:relative; z-index:8;}
 .bannerHolder{ background:url(../images/bannerBg.png) no-repeat 0 0; width:728px; height:491px; margin:-90px auto 0px; padding-top:120px;}
-.homeCamera{ position:absolute; right:240px; bottom:15px; z-index:10;}
-.homeChair{ position:absolute; left:245px; bottom:15px;}
+.homeCamera{ position:absolute; right:190px; bottom:15px; z-index:10;}
+.homeChair{ position:absolute; left:205px; bottom:15px;}
 .homeGallery{ margin:0 auto; width:456px; height:305px; background:#AAA; position:relative;}
 .homeGalleryshare{ margin:0 auto; width:270px; height:92px;  margin-top:10px; text-align:center;}
 .homeGalleryshare h3{ font-size:16px;  color:#000; font-weight:600; text-transform:uppercase; padding-bottom:2px;}
