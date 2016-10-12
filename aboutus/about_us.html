@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+<link rel="shortcut icon" href="images/red/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Red Canals Films</title>
+<meta name="description" content="A film production house based in Jalandhar, Punjab. Red Canals Films have a team of Designers, Art directors, Photographers, Film makers and Writers, who express their ideas in a highly-creative way which leaves a clear, memorable impression on the viewers."/>
+<meta name="keywords" content="Red Canals Films, Designers, Art directors, Photographers, Film makers, Writers, director, Red, Screenplay, Cinematographer, Script writer"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div class="contWrapper">
+  
+<script type="text/javascript" id="sourcecode">
+    $(function () {
+
+        var pageName = (function () {
+            var a = window.location.href,
+            b = a.lastIndexOf("../index.html");
+            return a.substr(b + 1);
+        }());
+
+        //alert(pageName);
+
+        if (pageName == "") {
+            $("#nav > li:nth-child(1) a").addClass('navActive');
+        }
+
+
+        var movi = ["yodha.aspx", "vardi.aspx", "up-coming.aspx", "student-year.aspx", "ra-one.aspx", "phir-bhi-dill-hindustani.aspx", "past-movies.aspx", "paheli.aspx", "om-shanti.aspx", "my-name-is-khan.aspx", "movie-rights.aspx", "main-ho-na.aspx", "dushmani.aspx", "damini.aspx", "chalte-chalte.aspx", "billu.aspx", "asoka.aspx", "arjun.aspx"]
+        for (i = 0; i < movi.length; i++) {
+            if (pageName == movi[i]) {
+                $("#nav > li:nth-child(2) a").addClass('navActive');
+            }
+        }
+
+
+        if (pageName == "past-movies.aspx") {
+            $('.leftNav ul li:eq(1) a').addClass('leftNavA');
+        }
+
+        if (pageName == "movie-rights.aspx") {
+            $('.leftNav ul li:eq(2) a').addClass('leftNavA');
+        }
+
+
+        if (pageName == "vfx.aspx") {
+            $("#nav > li:nth-child(3) a").addClass('navActive');
+        }
+
+
+        if (pageName == "equipment.aspx") {
+            $("#nav > li:nth-child(4) a").addClass('navActive');
+        }
+
+
+        if (pageName == "events.aspx") {
+            $("#nav > li:nth-child(5) a").addClass('navActive');
+        }
+
+
+        /*if (pageName == "digital.aspx") {				
+	   $("#nav > li:nth-child(6) a").addClass('navActive');
+	   }*/
+
+
+        var otherWorks = ["ad-show-reel.aspx", "tv-shows.aspx"]
+        for (i = 0; i < otherWorks.length; i++) {
+            if (pageName == otherWorks[i]) {
+                $("#nav > li:nth-child(6) a").addClass('navActive');
+                $('.leftNav ul li:eq(' + i + ') a').addClass('leftNavA');
+            }
+        }
+
+        var aboutUs = ["profile.aspx", "kkr.aspx"]
+        for (i = 0; i < aboutUs.length; i++) {
+            if (pageName == aboutUs[i]) {
+                $("#nav > li:nth-child(7) a").addClass('navActive');
+
+                $('.leftNav ul li:eq(' + i + ') a').addClass('leftNavA');
+            }
+        }
+
+
+
+        ////////////////////
+
+        $('#nav > li > div').prepend("<img src='/images/uparrow.gif' class='uparrow' />");
+
+
+
+        $('#nav > li').hover(function () {
+
+            var hh = $(this).children('div.dropmenu2').height();
+            var ww = $(this).children('div').width();
+            $(this).children('div').css('height', hh).css('width', ww);
+
+            var uparrowleft = parseInt($(this).width() / 2 - 6);
+            $('.uparrow').css('left', uparrowleft);
+
+            $(this).children('div').stop(true, true).slideDown(400);
+
+        },
+            function () {
+
+                $(this).children('div').stop(true, true).slideUp(200);
+
+                $('.dropmenuRight').hide()
+                $('.navList2 li a').removeClass('nl2A');
+                $('.navList2 li a:first').addClass('nl2A');
+                $('.dropmenuRight:first').show();
+
+            });
+
+        ///////////////////////////////////////	
+
+        $('.dropmenuRight').hide()
+        $('.navList2 li a:first').addClass('nl2A');
+        $('.dropmenuRight:first').show();
+
+        $('.navList2 li').hover(function () {
+
+            $('.navList2 li a').removeClass('nl2A');
+            $(this).children('a').addClass('nl2A');
+
+            var navList2Index = $(this).index();
+
+            if ($('.dropmenuRight:eq(' + navList2Index + ')').is(':visible')) {
+                $('.dropmenuRight:eq(' + navList2Index + ')').show()
+            }
+            else {
+                $('.dropmenuRight').hide();
+                $('.dropmenuRight:eq(' + navList2Index + ')').stop(true, true).fadeIn();
+            }
+        },
+            function () {
+                $('#movirights li a').removeClass('nlA');
+                $('#movirights li:first-child a').addClass('nlA');
+                $('.movirightsImg').attr('src', $('#movirights li:first-child a').attr('rel'))
+            }
+            );
+
+        ///////////////////////////////////////	
+
+        $('#movirights li a').hover(function () {
+            $('#movirights li a').removeClass('nlA');
+            $('.movirightsImg').attr('src', $(this).attr('rel'))
+            $(this).addClass('nlA');
+        });
+        $('.navList li:last-child').css('border-bottom', 'none');
+
+
+        ///////////////////////////////////////	<img src='/images/movirights1.jpg'' />
+
+
+        $('#pastMoviLeft li a').hover(function () {
+            var findPMLimg = $(this).attr('rel');
+            $('#pastMoviRight').prepend("<img src='/images/" + findPMLimg + "' class='pmlImg' />");
+        },
+            function () {
+                $('.pmlImg').remove();
+            }
+            );
+
+        $('#pastMoviRight li a').hover(function () {
+            var findPMLimg = $(this).attr('rel');
+            $('#pastMoviLeft').prepend("<img src='/images/" + findPMLimg + "' class='pmlImg' />");
+        },
+        function () {
+            $('.pmlImg').remove();
+        }
+        );
+
+
+
+
+
+    });
+</script>
+
+
+<div class="topPanel">
+    <div class="navSec">
+        <div class="center relative">
+            <ul id="nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#">Movies</a>
+                    <div style="display: none;">
+                        <div class="dropmenu2">
+                            <ul class="navList2 left">
+                                <!--<li><a href="#"> Now Playing</a></li> -->
+                                <li><a href="#">New releases</a></li>
+                                <li><a href="#">Past Movies</a></li>
+                               
+                            </ul>
+
+                            <!--<div class="dropmenuRight">Content for  class "4444" Goes Here</div> Now Playing end -->
+
+                            <div class="dropmenuRight">
+                                <ul class="navList left">
+                                    <li><a href="#">Rupees of God</a></li>
+                                    <li><em>A film by Harjeet Singh Oberoi</span></em></li>
+                                    <li>Movie Highlights the power of Nature and how well it's choreographed while taking care of emotions and desires of humans. God has his own ways of doing thing right - Trust Him</li>
+                                </ul>
+                                <img src="../images/red/rupee.jpg" width="126" height="152" alt="" />
+                            </div>
+                            <!-- Upcoming Movies end -->
+
+                            <div class="dropmenuRight">
+                                <ul class="navList left" id="pastMoviLeft">
+                                    <li><a href="../movies/rupees_of_god.html" rel="movirights_chennaiexpress.html">Rupees of God</a></li>
+                                    <li><a href="../movies/chullah.html" rel="movirights_student.html">Chullah</a></li>
+                                    <li><a href="../movies/caution.html" rel="movirights_raOne.html">Caution</a></li>
+                                    <!--<li><a href="/movies/akk.aspx" rel="movirights_always.jpg">Always Kabhi Kabhi</a></li> -->
+                                    
+                                </ul>
+                               
+
+                            </div>
+
+
+
+
+                           
+                        </div>
+                        <!-- dropmenu2 end -->
+                    </div>
+                </li>
+                <!-- movies end -->
+               
+              
+                <!-- Other Work end -->
+                <li><a href="about_us.html">About Us</a>
+                   
+                </li>
+            </ul>
+            <!-- navigation end -->
+            <div class="navSecRight"><a href="../contact.html" class="topContact">contact</a></div>
+
+            <div class="logoPanel">
+                <div class="logoSec">
+                    <!--<a href="/"><img src="/images/red-canals-logo.png" width="153" height="65" alt="red canals" title="red canals" /></a>-->
+                    <h1>Red Canals Films</h1>
+                </div>
+                <!-- logo section end -->
+                  <div class="topFollowus">
+                    <span>Follow us :</span>
+                    <a href="#" class="facebook" >facebook</a>
+                    <a href="#"  class="twitter">twitter</a>
+                    <a href="#"  class="youtube">youtube</a>
+                    <a href="#"  class="instagram">instagram</a>
+                    <!--<a href="#" class="pinterest">pinterest</a> -->
+                </div>
+                <!-- topFollowus end -->
+            </div>
+            <!-- logo section end -->
+
+        </div>
+        <!-- center end -->
+    </div>
+    <!-- nav section end -->
+
+
+
+
+
+
+</div>
+<!-- topPanel end -->
+
+
+
+
+<div class="logoBg"></div>
+<!-- moviList holder end -->
+
+  <div class="homeBody">
+    <div class="center relative">
+    
+    <img src="../images/camera.png" width="116" height="212" alt="" class="homeCamera" />
+    <img src="../images/chair.png" width="147" height="161" alt="" class="homeChair" />
+    
+    
+    
+    <div class="leftSection">
+    
+       <div class="leftNav">
+      <h3>About Us</h3>
+     
+      </div><!-- left nav end -->
+      
+      <script type="text/javascript" src="../js/contLeftSlider.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+$('.relatedSite span').click( 
+function (ee) {					 
+
+$('.relatedSiteList').slideToggle(); 
+ee.stopPropagation();
+
+}); 
+	
+$(document).click(function(){
+$('.relatedSiteList:visible').slideUp(); 
+});	
+
+
+});
+</script>
+
+<div class="pastMovi"><h3>Movies</h3>
+      
+       <div class="contLeftSliderBtn">
+        <a href="#" class="contLeftSliderBtnR" id="ptsPrev">prev</a>
+        <a href="#" class="contLeftSliderBtnL" id="ptsNext">next</a>
+    </div>
+     
+ 
+    <div class="contLeftSlider" id="pastThumbSlides"> 
+        <ul>
+            <li> <img src="../images/movie-images/rupee.jpg" alt="" /></li>
+            <li> <img src="../images/movie-images/chullah.jpg" alt="" /></li>
+           <!-- <li> <img src="/images/pastMovi/always-khavi-khavi.jpg" alt="" /></li> -->
+            <li> <img src="../images/movie-images/caution.jpg" alt="" /></li>
+           
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <a href="#" class="more2"></a>
+      </div><!-- past movi section end -->
+      
+
+
+
+      
+    </div><!-- left section end -->
+    
+   		 <div class="rightSection">
+    
+    <div class="whatOn contwhatOn">
+   
+<script type="text/javascript" src="../js/whatsOnSlider.js"></script>
+
+    </div><!-- whatOn end -->
+    
+    
+    </div><!-- right section end -->
+    
+		<div class="contentAreaTop">
+        <div class="contentAreaBtm">
+          <div class="contentArea">
+            <div class="contTop">
+            <h2>Profile</h2><!-- pageName end -->
+            <div class="breadcrumb"><a href="../index.html">Home</a><span>About Us</div><!-- breadcrumb end -->
+            </div><!-- contTop end -->
+			<br>
+           <div class="contBanner"><img src="../images/banner.jpg" width="574" height="156" alt="" /></div>
+            <div class="contSec">   <br>       
+            <span style="font-family:minion pro;font-size:35px"><p>We embarked our journey last year for the purpose of encouraging new talent in our country and to help them grow more.We make movies, videos, documentaries, commercial adds which are the fastest means of explosion of ones ideas. The talent that inspires our work. We ignite the fire in each, and then create the tools, the processes and the means to spread it quickly, efficiently, widely, and successfully. We have proven our expertise time and again by promoting new talents and in keeping alive our traditions also. Our techniques focuses on transformation of an individual through a unique and multi-disciplinary approach, training them to excel in the entertainment industry.We are Designers, Art directors, Photographers, Film makers and Writers, who express their ideas in a highly-creative way which leaves a clear, memorable impression on the viewers. We exist to define, nurture, and build these experiences..We know how to mould your ideas in the shape of success and make them reach the desired audience. </p></span>
+            </div>
+            </div>
+        </div>
+      </div><!-- bannerHolder end -->
+      
+    </div><!-- center end -->
+  </div><!-- home body end -->
+  
+ <div class="contFooter"> 
+ <div class="footerPanel">
+    <div class="copyright"><center>All Rights Reserved &copy; <strong>2015 Red Canals Films</strong>Powered By <a href="https://www.espeedsolutions.com" target="_blank">eSpeed Solutions</a></center></div>
+
+      
+
+ <div class="clear"></div>
+    </div>
+   
+   
+    <!-- moviList holder end --> 
+ </div>   
+</div><!-- homeWrapper end -->
+</body>
+
+
+</html>

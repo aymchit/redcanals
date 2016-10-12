@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Red Canals Films</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+</style>
+
+<link rel="shortcut icon" href="images/red/favicon.ico">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/slider.js"></script>
+
+        <script type="text/javascript">
+
+
+        $(function() {			
+            
+			 $('.frames').click(function(){
+				 $('.moviDisplayTab span').animate({'left':'0px'});	
+				 $('.moviDisplayTab a').removeClass('moviDisplayTabA');	
+				 $(this).addClass('moviDisplayTabA');
+				 $('#moviTrailer').attr('src',$(this).attr('href'))
+				  $('#moviTrailer').fadeOut();					  
+				 $('#buttons').show();
+				 return false	 
+				 });		
+			 $('.trailer').click(function(){
+				 $('.moviDisplayTab span').animate({'left':'139px'});
+				 $('.moviDisplayTab a').removeClass('moviDisplayTabA');	
+				 $(this).addClass('moviDisplayTabA');
+				 $('#moviTrailer').fadeIn();
+				 $('#moviTrailer').attr('src',$(this).attr('href'))
+				 $('#buttons').hide();
+				 return false
+				 });
+				 
+				 
+		$('.moviInfoTab li a').click(function(){
+			
+			$('.moviInfoTab li a').removeClass('moviTabA');
+			$(this).addClass('moviTabA');
+			
+			
+			var findTabIndex = $(this).parent('li').index();
+			
+			if($('.moviInfoHolder:eq('+findTabIndex+')').is(':hidden')){
+			$('.moviInfoHolder').hide();
+			}
+			$('.moviInfoHolder:eq('+findTabIndex+')').fadeIn();
+			return false;
+        });
+		
+});
+   
+</script>
+
+
+        
+</head>
+
+<body>
+
+
+
+<div class="homeWrapper" style="background:url(../images/chullah_background.png) no-repeat 50% 0;">
+  
+<script type="text/javascript" id="sourcecode">
+    $(function () {
+
+        var pageName = (function () {
+            var a = window.location.href,
+            b = a.lastIndexOf("../index.html");
+            return a.substr(b + 1);
+        }());
+
+        //alert(pageName);
+
+        if (pageName == "") {
+            $("#nav > li:nth-child(1) a").addClass('navActive');
+        }
+
+
+        var movi = []
+        for (i = 0; i < movi.length; i++) {
+            if (pageName == movi[i]) {
+                $("#nav > li:nth-child(2) a").addClass('navActive');
+            }
+        }
+
+
+        if (pageName == "past-movies.aspx") {
+            $('.leftNav ul li:eq(1) a').addClass('leftNavA');
+        }
+
+        if (pageName == "movie-rights.aspx") {
+            $('.leftNav ul li:eq(2) a').addClass('leftNavA');
+        }
+
+
+        if (pageName == "vfx.aspx") {
+            $("#nav > li:nth-child(3) a").addClass('navActive');
+        }
+
+
+        if (pageName == "equipment.aspx") {
+            $("#nav > li:nth-child(4) a").addClass('navActive');
+        }
+
+
+        if (pageName == "events.aspx") {
+            $("#nav > li:nth-child(5) a").addClass('navActive');
+        }
+
+
+        /*if (pageName == "digital.aspx") {				
+	   $("#nav > li:nth-child(6) a").addClass('navActive');
+	   }*/
+
+
+        var otherWorks = ["ad-show-reel.aspx", "tv-shows.aspx"]
+        for (i = 0; i < otherWorks.length; i++) {
+            if (pageName == otherWorks[i]) {
+                $("#nav > li:nth-child(6) a").addClass('navActive');
+                $('.leftNav ul li:eq(' + i + ') a').addClass('leftNavA');
+            }
+        }
+
+        var aboutUs = ["profile.aspx", "kkr.aspx"]
+        for (i = 0; i < aboutUs.length; i++) {
+            if (pageName == aboutUs[i]) {
+                $("#nav > li:nth-child(7) a").addClass('navActive');
+
+                $('.leftNav ul li:eq(' + i + ') a').addClass('leftNavA');
+            }
+        }
+
+
+
+        ////////////////////
+
+        $('#nav > li > div').prepend("<img src='/images/uparrow.gif' class='uparrow' />");
+
+
+
+        $('#nav > li').hover(function () {
+
+            var hh = $(this).children('div.dropmenu2').height();
+            var ww = $(this).children('div').width();
+            $(this).children('div').css('height', hh).css('width', ww);
+
+            var uparrowleft = parseInt($(this).width() / 2 - 6);
+            $('.uparrow').css('left', uparrowleft);
+
+            $(this).children('div').stop(true, true).slideDown(400);
+
+        },
+            function () {
+
+                $(this).children('div').stop(true, true).slideUp(200);
+
+                $('.dropmenuRight').hide()
+                $('.navList2 li a').removeClass('nl2A');
+                $('.navList2 li a:first').addClass('nl2A');
+                $('.dropmenuRight:first').show();
+
+            });
+
+        ///////////////////////////////////////	
+
+        $('.dropmenuRight').hide()
+        $('.navList2 li a:first').addClass('nl2A');
+        $('.dropmenuRight:first').show();
+
+        $('.navList2 li').hover(function () {
+
+            $('.navList2 li a').removeClass('nl2A');
+            $(this).children('a').addClass('nl2A');
+
+            var navList2Index = $(this).index();
+
+            if ($('.dropmenuRight:eq(' + navList2Index + ')').is(':visible')) {
+                $('.dropmenuRight:eq(' + navList2Index + ')').show()
+            }
+            else {
+                $('.dropmenuRight').hide();
+                $('.dropmenuRight:eq(' + navList2Index + ')').stop(true, true).fadeIn();
+            }
+        },
+            function () {
+                $('#movirights li a').removeClass('nlA');
+                $('#movirights li:first-child a').addClass('nlA');
+                $('.movirightsImg').attr('src', $('#movirights li:first-child a').attr('rel'))
+            }
+            );
+
+        ///////////////////////////////////////	
+
+        $('#movirights li a').hover(function () {
+            $('#movirights li a').removeClass('nlA');
+            $('.movirightsImg').attr('src', $(this).attr('rel'))
+            $(this).addClass('nlA');
+        });
+        $('.navList li:last-child').css('border-bottom', 'none');
+
+
+        ///////////////////////////////////////	<img src='/images/movirights1.jpg'' />
+
+
+        $('#pastMoviLeft li a').hover(function () {
+            var findPMLimg = $(this).attr('rel');
+            $('#pastMoviRight').prepend("<img src='/images/" + findPMLimg + "' class='pmlImg' />");
+        },
+            function () {
+                $('.pmlImg').remove();
+            }
+            );
+
+        $('#pastMoviRight li a').hover(function () {
+            var findPMLimg = $(this).attr('rel');
+            $('#pastMoviLeft').prepend("<img src='/images/" + findPMLimg + "' class='pmlImg' />");
+        },
+        function () {
+            $('.pmlImg').remove();
+        }
+        );
+
+
+
+
+
+    });
+</script>
+
+
+<div class="topPanel">
+    <div class="navSec">
+        <div class="center relative">
+            <ul id="nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#">Movies</a>
+                    <div style="display: none;">
+                        <div class="dropmenu2">
+                            <ul class="navList2 left">
+                                <!--<li><a href="#"> Now Playing</a></li> -->
+                                <li><a href="up-coming.html">New releases</a></li>
+                                <li><a href="past-movies.html">Past Movies</a></li>
+                                
+                            </ul>
+
+                            <!--<div class="dropmenuRight">Content for  class "4444" Goes Here</div> Now Playing end -->
+
+                               <div class="dropmenuRight">
+                                <ul class="navList left">
+                                    <li><a href="#">Rupees of God</a></li>
+                                    <li><em>A film by Harjeet Singh Oberoi</span></em></li>
+                                    <li>Movie Highlights the power of Nature and how well it's choreographed while taking care of emotions and desires of humans. God has his own ways of doing thing right - Trust Him</li>
+                                </ul>
+                                <img src="../images/red/rupee.jpg" width="126" height="152" alt="" />
+                            </div>
+                            <!-- Upcoming Movies end -->
+
+                            <div class="dropmenuRight">
+                                <ul class="navList left" id="pastMoviLeft">
+                                    <li><a href="rupees_of_god.html" rel="movirights_chennaiexpress.html">Rupees of God</a></li>
+                                    <li><a href="chullah.html" rel="movirights_student.html">Chullah</a></li>
+                                    <li><a href="caution.html" rel="movirights_raOne.html">Caution</a></li>
+                                    <!--<li><a href="/movies/akk.aspx" rel="movirights_always.jpg">Commercial</a></li> -->
+                                    
+                                </ul>
+                               
+
+                            </div>
+                            <!-- Past Hits end -->
+
+
+
+
+
+
+                        </div>
+                        <!-- dropmenu2 end -->
+                    </div>
+                </li>
+                <!-- movies end -->
+              
+              
+                <!-- Other Work end -->
+                <li><a href="../aboutus/about_us.html">About Us</a>
+                   
+                </li>
+            </ul>
+            <!-- navigation end -->
+          <div class="navSecRight"><a href="../contact.html" class="topContact">contact</a></div>
+
+            <div class="logoPanel">
+                <div class="logoSec">
+                    <!--<a href="/"><img src="/images/red-canals-logo.png" width="153" height="65" alt="red canals" title="red canals" /></a>-->
+                    <h1>Red Canals Films</h1>
+                </div>
+                <!-- logo section end -->
+                  <div class="topFollowus">
+                    <span>Follow us :</span>
+                    <a href="#" class="facebook" >facebook</a>
+                    <a href="#"  class="twitter">twitter</a>
+                    <a href="#"  class="youtube">youtube</a>
+                    <a href="#"  class="instagram">instagram</a>
+                    <!--<a href="#" class="pinterest">pinterest</a> -->
+                </div>
+                <!-- topFollowus end -->
+            </div>
+            <!-- logo section end -->
+
+        </div>
+        <!-- center end -->
+    </div>
+    <!-- nav section end -->
+
+
+
+
+
+
+</div>
+<!-- topPanel end -->
+
+
+
+
+<div class="logoBg"></div>
+<!-- moviList holder end -->
+
+  
+  <div class="homeBody">
+    <div class="center relative">
+       <div class="breadcrumb moviBreadcrumb"><a href="../index.html">Home</a><span>Movies</span><span>Past Movie</span>Chullah</div><!-- breadcrumb end -->
+      <div class="movibannerHolder">
+    <div class="homeGallery">
+    <iframe id='moviTrailer' name='kk' src='#' style='border:0; display:none;' scrolling='no' frameborder='0' width="456" height="335"></iframe><!-- clips end -->
+    
+    
+    <div class="moviImgInnerShadow">&nbsp;</div>
+   
+    <div id="buttons">
+    <span><strong>1</strong>/2</span><!--
+        <a href="#" id="pose">pose</a>        
+        <a href="#" id="play">play</a> -->
+        <a href="#" id="next">next</a>
+        <a href="#" id="prev">prev</a>
+    </div>
+     
+ 
+    <div id="slides"> 
+        <ul>
+            <li><img src="../images/movie-images/chullah.jpg" width="456" height="335" alt="" /></li>
+            <li><img src="../images/movie-images/chullah1.png" width="456" height="335" alt="" /></li>
+            <li><img src="../images/movie-images/chullah4.png" width="456" height="335" alt="" /></li>
+            <li><img src="../images/movie-images/chullah3.png" width="456" height="335" alt="" /></li>
+            
+        </ul>
+        <div class="clear"></div>
+    </div>
+    
+    
+        <div class="moviDisplayTab"><span></span><a href="https://www.youtube.com/embed/g4mZtYdSj5E" class="trailer">TRAILER</a></div>
+    
+    
+   </div>
+    <div class="snapDisplayTab"><img width="145" height="46" src="../images/snapDisplayTab.png"></div>
+    <!-- homeGalleryshare end -->
+    </div><!-- bannerHolder end -->
+    </div><!-- center end -->
+  </div><!-- home body end -->
+  
+  
+  
+  
+  <div class="movihighlightPanel">
+  <div style="height:45px; background:#e68921"><div class="center">
+ <ul class="moviInfoTab"> <li><a href="#" class="moviTabA">Synopsis</a></li><li><a href="#">Details</a></li><!--<li><a href="#">Awards</a></li> --></ul><!-- moviInfoTab end -->
+ <div class="moviInfoSm">
+ <span><a href="#"  class="f">s</a></span>
+ <span><a href="#"  class="t">s</a></span>
+ <span><a href="#"  class="u">s</a></span>
+ <span><a href="#"  class="p">s</a></span>
+ </div>
+ 
+  </div></div><!-- -->
+  
+  <div class="center" style="padding-top:20px;">
+  <div class="moviInfoHolder">
+      <div class="moviInfoSec">
+      <p>"Chullah" - Ik Boond Amrit Di
+The movie reflects that how powerful & important a drop of Amrit can be in one's life. As how Guru's protect their children from the odds & shows the true path of Life. Chullah is a form of Amrit which Sikh parents give to their children after there birth
+</p>
+      </div>
+     
+    </div><!-- Synopsis end -->
+    <div class="moviInfoHolder" style="display:none;">
+      <div class="moviPartSec">
+     
+<p><strong>Directed By</strong>Harjeet Singh Oberoi</p>
+<p><strong>Produced By</strong>Jasmeet Singh Kohli</p>
+
+      </div>
+     
+     
+     
+      <div class="clear"></div>
+      
+    </div><!-- Details end -->
+    <!-- Awards end -->
+<div class="clear"></div>
+    <!-- highlightSections end -->
+  </div><!--highlight center end -->
+    </div><!-- movihighlightPanel end -->
+    
+    
+<div class="footerPanel">
+    <div class="copyright"><center>All Rights Reserved &copy; <strong>2015 Red Canals Films</strong>Powered By <a href="https://www.espeedsolutions.com" target="_blank">eSpeed Solutions</a></center></div>
+
+      
+
+ <div class="clear"></div>
+    </div>
+   
+   
+<!-- moviList holder end --> 
+    
+</div><!-- homeWrapper end -->
+</body>
+
+
+</html>
+
