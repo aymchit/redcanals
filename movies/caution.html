@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Red Canals Films</title>
@@ -22,23 +23,24 @@
 
 
         $(function() {			
-            
-			 $('.frames').click(function(){
-				 $('.moviDisplayTab span').animate({'left':'0px'});	
-				 $('.moviDisplayTab a').removeClass('moviDisplayTabA');	
-				 $(this).addClass('moviDisplayTabA');
-				 $('#moviTrailer').attr('src',$(this).attr('href'))
-				  $('#moviTrailer').fadeOut();					  
-				 $('#buttons').show();
+                 $(this).addClass('moviDisplayTabA');
+				 $('#moviTrailer').fadeIn();
+                 
+
+			 $('.trailer').click(function(){
+				 $('.moviDisplayTab span').animate({'left':'0px'});
+                 $('.movie').removeClass('moviDisplayTabA');	
+				 $(this).addClass('moviDisplayTabA');	
+				 $('#moviTrailer').attr('src',$(this).attr('href'))					  
+				 
 				 return false	 
 				 });		
-			 $('.trailer').click(function(){
+			 $('.movie').click(function(){
 				 $('.moviDisplayTab span').animate({'left':'139px'});
-				 $('.moviDisplayTab a').removeClass('moviDisplayTabA');	
-				 $(this).addClass('moviDisplayTabA');
-				 $('#moviTrailer').fadeIn();
-				 $('#moviTrailer').attr('src',$(this).attr('href'))
-				 $('#buttons').hide();
+                 $('.trailer').removeClass('moviDisplayTabA');
+                 $(this).addClass('moviDisplayTabA');	
+				  $('#moviTrailer').attr('src',$(this).attr('href'))
+				 
 				 return false
 				 });
 				 
@@ -257,43 +259,46 @@
 
                             <!--<div class="dropmenuRight">Content for  class "4444" Goes Here</div> Now Playing end -->
 
-                              <div class="dropmenuRight">
+                             <div class="dropmenuRight">
                                 <ul class="navList left">
-                                    <li><a href="#">Rupees of God</a></li>
+                                    <li><a href="mannan.html">Mannan</a></li>
                                     <li><em>A film by Harjeet Singh Oberoi</span></em></li>
-                                    <li>Movie Highlights the power of Nature and how well it's choreographed while taking care of emotions and desires of humans. God has his own ways of doing thing right - Trust Him</li>
+                                    <li>Movie highlights the journey of a Sikh from an unyielding atheist to a staunch believer</li>
                                 </ul>
-                                 <img src="../images/red/rupee.jpg" width="126" height="152" alt="" />
+                                <img src="../images/red/mannan.jpg" width="126" alt="" />
                             </div>
                             <!-- Upcoming Movies end -->
 
-                          <div class="dropmenuRight">
+                            <div class="dropmenuRight">
                                 <ul class="navList left" id="pastMoviLeft">
-                                    <li><a href="rupees_of_god.html" rel="movirights_chennaiexpress.html">Rupees of God</a></li>
-                                    <li><a href="chullah.html" rel="movirights_student.html">Chullah</a></li>
-                                    <li><a href="caution.html" rel="movirights_raOne.html">Caution</a></li>
+                                    <li><a href="mannan.html" >Mannan</a></li>
+                                    <li><a href="rupees_of_god.html" >Rupees of God</a></li>
+                                    <li><a href="chullah.html" >Chullah</a></li>
+                                    <li><a href="caution.html" >Caution</a></li>
                                     <!--<li><a href="/movies/akk.aspx" rel="movirights_always.jpg">Always Kabhi Kabhi</a></li> -->
                                     
                                 </ul>
-                               
-
                             </div>
                             <!-- Past Hits end -->
 
-
-
-
-
-                          
+                            <div class="dropmenuRight">
+                                <ul class="navList left">
+                                  <li><a href="liwinn.html">Liwinn</a></li>
+                                    <li><em>A commercial ad film by Harjeet Singh Oberoi</span></em></li>
+                                    <li>Liwinn - A showroom of Luxury Items, Households etc. in Pathankot, Punjab</li>
+                                </ul>
+                                <img src="../images/red/liwinn.jpg" width="126" alt="" />
+                            </div>
+                            <!-- Past Hits end -->
+                         
                             <!-- Movie Rights end -->
 
                         </div>
                         <!-- dropmenu2 end -->
                     </div>
                 </li>
-                <!-- movies end -->
-               
               
+               
                 <!-- Other Work end -->
                 <li><a href="../aboutus/about_us.html">About Us</a>
                    
@@ -304,15 +309,15 @@
 
             <div class="logoPanel">
                 <div class="logoSec">
-                    <!--<a href="/"><img src="/images/red-canals-logo.png" width="153" height="65" alt="red canals" title="red canals" /></a>-->
+                    <!--<a href="/"><img src="/images/red-canals-logo.png" width="153" height="65" alt="red canals" title="red chillies" /></a>-->
                     <h1>Red Canals Films</h1>
                 </div>
                 <!-- logo section end -->
                  <div class="topFollowus">
                     <span>Follow us :</span>
-                    <a href="#" class="facebook" >facebook</a>
+                    <a href="https://www.facebook.com/redcanals/" target="_blank" class="facebook" >facebook</a>
                     <a href="#"  class="twitter">twitter</a>
-                    <a href="#"  class="youtube">youtube</a>
+                    <a href="https://www.youtube.com/channel/UCxWAzwh02jwWOrPM7WjlMaQ" target="_blank" class="youtube">youtube</a>
                     <a href="#"  class="instagram">instagram</a>
                     <!--<a href="#" class="pinterest">pinterest</a> -->
                 </div>
@@ -342,46 +347,19 @@
   
   <div class="homeBody">
     <div class="center relative">
-       <div class="breadcrumb moviBreadcrumb">
-           <a href="../index.html">Home</a>
-           <span>Movies</span>
-           <span>Past Movies</span>
-        Caution
-        </div><!-- breadcrumb end -->
+       <div class="breadcrumb moviBreadcrumb"><a href="../index.html">Home</a><span>Movies</span><span>Past Movies</span>Caution</div><!-- breadcrumb end -->
       <div class="movibannerHolder">
     <div class="homeGallery">
-    <iframe id='moviTrailer' name='kk' src='#' style='border:0; display:none;' scrolling='no' frameborder='0' width="456" height="335"></iframe><!-- clips end -->
+    <iframe id='moviTrailer' name='kk' src='https://www.youtube.com/embed/6hOjABIsREU' style='border:0; display:none;' scrolling='no' frameborder='0' width="456" height="335"></iframe><!-- clips end -->
     
     
     <div class="moviImgInnerShadow">&nbsp;</div>
-   
-    <div id="buttons">
-    <span><strong>1</strong>/2</span><!--
-        <a href="#" id="pose">pose</a>        
-        <a href="#" id="play">play</a> -->
-        <a href="#" id="next">next</a>
-        <a href="#" id="prev">prev</a>
-    </div>
      
- 
-    <div id="slides"> 
-        <ul>
-            <li><img src="../images/movie-images/caution.jpg" width="456" height="335" alt="" /></li>
-            <li><img src="../images/movie-images/caution1.png" width="456" height="335" alt="" /></li>
-            <li><img src="../images/movie-images/caution2.png" width="456" height="335" alt="" /></li>
-            <li><img src="../images/movie-images/caution3.png" width="456" height="335" alt="" /></li>
-           
-        </ul>
-        <div class="clear"></div>
-    </div>
-    
-    
-    
-    
-    
    </div>
-    <div class="moviDisplayTab"><span></span><a href="../images/blank.gif" class="frames moviDisplayTabA">FRAMES</a><a href="https://www.youtube.com/embed/6hOjABIsREU" class="trailer">TRAILER</a></div>
-    <!-- homeGalleryshare end -->
+    <div class="moviDisplayTab"><span></span>
+    <a href="https://www.youtube.com/embed/6hOjABIsREU" class="trailer linkStyle moviDisplayTabA">MOVIE</a>
+    <!-- <a href="https://www.youtube.com/embed/6hOjABIsREU" class="movie linkStyle">MOVIE</a></div>
+    homeGalleryshare end -->
     </div><!-- bannerHolder end -->
     </div><!-- center end -->
   </div><!-- home body end -->
@@ -390,36 +368,38 @@
   
   
   <div class="movihighlightPanel">
-  <div style="height:45px; background:#07ceef"><div class="center">
+  <div style="height:45px; background:#ecb202"><div class="center">
  <ul class="moviInfoTab"> <li><a href="#" class="moviTabA">Synopsis</a></li><li><a href="#">Details</a></li></ul><!-- moviInfoTab end -->
+ <div class="moviInfoSm">
+ <span><a href="https://www.facebook.com/redcanals/" target="_blank" class="f">s</a></span>
+ <span><a href="#"  class="t">s</a></span>
+ <span><a href="https://www.youtube.com/channel/UCxWAzwh02jwWOrPM7WjlMaQ" target="_blank" class="u">s</a></span>
+ <span><a href="#"  class="p">s</a></span>
+ </div>
  
   </div></div><!-- -->
   
   <div class="center" style="padding-top:20px;">
-  <div class="moviInfoHolder">
+  	<div class="moviInfoHolder">
       <div class="moviInfoSec">
       <p>"Drive With Caution Or Live With Guilt"</p>
 		<p>Movie tries to telecast one of the most prominent issues that has hit the Nation is NOISE POLLUTION, brought about by the brutal use of Pressure Horns. Although, it is strictly prohibited near the hospitals, residential areas and educational institutions. By not following the road safety rules, one can be the reason of others death. </p>
       </div>
-      
+
     </div><!-- Synopsis end -->
+    
     <div class="moviInfoHolder" style="display:none;">
       <div class="moviPartSec">
-     <p><strong>Director</strong>Harjeet Singh Oberoi</p>
+      <p><strong>Director</strong>Harjeet Singh Oberoi</p>
       <p><strong>Producer</strong> Nitiya Narang</p>
       <p><strong>Cinematography </strong>Ashwani Kumar </p>
       <p><strong>Music </strong> Manu Mc </p>
 	  <p><strong>Creative Head </strong>Jks Khera</p>
-      
-      
+     
       </div>
      
-      
-    
-      <div class="clear"></div>
-      
-    </div><!-- Details end -->
-   
+     
+    </div><!-- Awards end -->
 <div class="clear"></div>
     <!-- highlightSections end -->
   </div><!--highlight center end -->
@@ -435,7 +415,7 @@
     </div>
    
    
-   <!-- moviList holder end --> 
+  <!-- moviList holder end --> 
     
 </div><!-- homeWrapper end -->
 </body>
